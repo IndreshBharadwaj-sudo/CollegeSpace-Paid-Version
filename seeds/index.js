@@ -20,10 +20,9 @@ const seedDB = async () =>
     for (let i = 0; i < 3; i++)
     {
         const course = new Course({
-            author:'60b396b443a78508648957f0',
+            author:'60b3e8dbe7dc8500150e283c',
             title: `${ courses[i].title }`,
-            description: `${ courses[i].description }`,
-            image: 'https://www.gpca.org.ae/wp-content/uploads/2018/12/shutterstock_566877226-6498x2166.jpg'
+            description: `${ courses[i].description }`
         })
         await course.save();
     }
