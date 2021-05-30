@@ -15,6 +15,7 @@ module.exports.createCourse=async (req, res) =>
 {
     const course = new Course(req.body.course);
     course.author = req.user._id;
+    console.log(req.body)
     await course.save();
     req.flash('success', 'Successfully made a new course');
     res.redirect(`/courses/${course._id}`);
