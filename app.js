@@ -32,7 +32,7 @@ const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/collegespace';
 
 const MongoStore = require('connect-mongo');
 
-mongoose.connect('mongodb://localhost:27017/collegespace', {
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
