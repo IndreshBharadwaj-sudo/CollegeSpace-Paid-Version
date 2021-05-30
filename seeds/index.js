@@ -20,7 +20,7 @@ const seedDB = async () =>
     for (let i = 0; i < 3; i++)
     {
         const course = new Course({
-            author:'60b24fa43aae9f15e47c5a6b',
+            author:'60b396b443a78508648957f0',
             title: `${ courses[i].title }`,
             description: `${ courses[i].description }`,
             image: 'https://www.gpca.org.ae/wp-content/uploads/2018/12/shutterstock_566877226-6498x2166.jpg'
