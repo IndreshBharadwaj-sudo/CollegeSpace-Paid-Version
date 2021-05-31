@@ -6,6 +6,7 @@ if (process.env.NODE_ENV !== "production")
 const express = require('express');
 const app = express();
 const path = require('path');
+var favicon = require('serve-favicon')
 const mongoose = require('mongoose');
 const Course = require('./models/courses');
 const Joi = require('joi');
@@ -57,7 +58,8 @@ app.use(session(
             touchAfter: 24 * 3600
         }),
         
-      }));
+    }));
+      app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'))
 app.engine('ejs', ejsMate);
