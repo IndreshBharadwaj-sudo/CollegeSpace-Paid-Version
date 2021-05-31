@@ -47,7 +47,7 @@ db.once("open", () =>
 })
 
 const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
-
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(session(
       {
         secret,
@@ -59,7 +59,6 @@ app.use(session(
         }),
         
     }));
-      app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'))
 app.engine('ejs', ejsMate);

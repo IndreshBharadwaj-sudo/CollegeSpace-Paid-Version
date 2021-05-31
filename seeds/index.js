@@ -17,15 +17,15 @@ db.once("open", () =>
 const seedDB = async () =>
 {
     await Course.deleteMany({});
-    for (let i = 0; i < 4; i++)
-    {
-        const course = new Course({
-            author:'60b3e8dbe7dc8500150e283c',
-            title: `${ courses[i].title }`,
-            description: `${ courses[i].description }`
-        })
-        await course.save();
-    }
+    // for (let i = 0; i < 4; i++)
+    // {
+    //     const course = new Course({
+    //         author:'60b3e8dbe7dc8500150e283c',
+    //         title: `${ courses[i].title }`,
+    //         description: `${ courses[i].description }`
+    //     })
+    //     await course.save();
+    // }
 }
 seedDB().then(() =>
 {
