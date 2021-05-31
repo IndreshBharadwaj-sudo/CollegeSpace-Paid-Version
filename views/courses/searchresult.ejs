@@ -1,0 +1,18 @@
+<% layout('/layouts/boilerplate') %>
+<div class="jumbotron">
+  <h1 class="display-4">Search Results!</h1>
+</div>
+<% for(let material of materials){ %>
+        <div class="card my-3">
+            <div class="card-body">
+            <p class="card-title">Description : <%= material.description %> </p>
+            <p class="card-subtitle text-muted my-1">FileName : <%= material.files.originalname %> </p>
+            <% if(currentUser&&material.author.equals(currentUser._id)){ %>
+            <form action="/courses/<%=id%>/materials/<%=material._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-sm btn-danger">Delete</button>
+            </form>
+            <% } %>
+                <button class="btn btn-success my-2" onclick=" window.open('<%=material.files.url%>','_blank')">Download</button>
+            </div>
+        </div>
+    <% } %> 

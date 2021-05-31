@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "circular-json": "^0.5.9",
+    "circular-json-es6": "^2.0.2",
     "cloudinary": "^1.25.1",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^4.4.1",
@@ -23,6 +25,7 @@
     "express-session": "^1.17.2",
     "helmet": "^4.6.0",
     "joi": "^17.4.0",
+    "json-circular-stringify": "^1.0.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.12.11",
     "multer": "^1.4.2",

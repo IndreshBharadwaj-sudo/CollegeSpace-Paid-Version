@@ -60,3 +60,14 @@ module.exports.validateMaterial = (req, res, next) =>
     else
         next();
 }
+
+module.exports.isValidUser = (req, res, next) =>
+{
+    if (!req.body.email.includes("student.nitw.ac.in"))
+    {
+        req.flash('error', 'Please Enter A Valid Student Mail!')
+        return res.redirect('/register');
+    }
+    else
+        next();
+}

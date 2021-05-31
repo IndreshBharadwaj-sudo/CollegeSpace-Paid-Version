@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const materialSchema = new Schema({
     description: String,
+    courseID: String,
     files:
         {
             url: String,

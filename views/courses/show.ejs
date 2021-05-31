@@ -37,12 +37,18 @@
     <form action="/courses/<%=course._id%>/materials/new">
         <button class="btn btn-dark mb-3">Add More Material</button>
     </form>
-    <% } %> 
+    <% } %>
+    <div class="mb-4">
+    <form action="/courses/<%=course._id%>/search" method="POST" class="d-flex">
+        <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-warning" type="submit">Search</button>
+      </form>
+    </div>
     <% for(let material of course.materials){ %>
         <div class="card mb-3">
             <div class="card-body">
             <p class="card-title">Description : <%= material.description %> </p>
-            <p class="card-subtitle text-muted">AddedBy : <%= material.author.username %> </p>
+            <p class="card-subtitle text-muted">AddedBy : <%= material.author.email %> </p>
             <p class="card-subtitle text-muted my-1">FileName : <%= material.files.originalname %> </p>
             <% if(currentUser&&material.author.equals(currentUser._id)){ %>
             <form action="/courses/<%=course._id%>/materials/<%=material._id%>?_method=DELETE" method="POST">
@@ -53,7 +59,6 @@
             </div>
         </div>
     <% } %> 
-    </div>
     <footer>
-        <a href="/courses" class="btn btn-warning">Back To All Courses</a>
+        <a href="/courses" class="btn btn-warning my-2">Back To All Courses</a>
     </footer>
